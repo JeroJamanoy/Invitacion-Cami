@@ -1,0 +1,291 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff1f1;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #c0392b;
+  color: white;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.entry.alt {
+  transform: translateX(-50px);
+}
+
+.entry.alt.visible {
+  transform: translateX(0);
+}
+
+.entry.highlight {
+  background-color: #f8d7da;
+  border-radius: 15px;
+}
+
+.entry.quote {
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  font-style: italic;
+  font-size: 1.3rem;
+}
+
+.quote {
+  font-size: 1.5rem;
+  color: #e74c3c;
+  text-shadow: 0 0 5px #fc6d5e, 0 0 10px #ff1493;
+  animation: neonGlow 1.5s infinite alternate;
+}
+
+@keyframes neonGlow {
+  from {
+    text-shadow: 0 0 5px #ff5744;
+  }
+  to {
+    text-shadow: 0 0 20px #ce4536, 0 0 30px #e74c3c;
+  }
+}
+
+
+.quote2 {
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #e74c3c;
+    animation: wave 2s infinite ease-in-out;
+}
+
+@keyframes wave {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+
+.entry img {
+  width: 40%;
+  max-width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.entry p {
+  width: 50%;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.entry.left {
+  flex-direction: row-reverse;
+}
+
+.entry.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.invitation {
+  text-align: center;
+  background-color: #ffe4e1;
+  padding: 3rem 1rem;
+  margin-top: 3rem;
+  border-top: 2px solid #ffb6c1;
+}
+
+.invitation h2 {
+  margin-bottom: 1rem;
+}
+
+.video-central {
+  text-align: center;
+  padding: 2rem;
+}
+
+.video-central video {
+  width: 40%;
+  max-width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.video-central p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.entry.end {
+  flex-direction: column;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 1.2s ease;
+}
+
+.entry.end.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.entry.end img {
+  width: 60%;
+  max-width: 400px;
+  border-radius: 25px;
+  box-shadow: 0 0 20px rgba(255, 105, 105, 0.5);
+  transition: transform 0.8s ease;
+}
+
+.entry.end.visible img {
+  transform: rotate(1deg) scale(1.02);
+}
+
+.entry.end h1 {
+  font-size: 2rem;
+  color: #e74c3c;
+  margin-top: 1.5rem;
+  text-shadow: 0 0 10px rgba(255, 105, 105, 0.4);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #ff6969;
+  }
+  to {
+    text-shadow: 0 0 20px #ff4242;
+  }
+}
+
+
+button {
+  background-color: #ff69b4;
+  border: none;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #e74432;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+.container h1 {
+    color: #c0392b;
+    margin-bottom: 1rem;
+}
+
+.card {
+    background: #ffe9ec;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.btn {
+    background-color: #e01a1a;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.5s;
+}
+
+.delay-2 {
+    animation-delay: 1s;
+}
+
+.delay-3 {
+    animation-delay: 1.5s;
+}
+
+.delay-4 {
+    animation-delay: 2s;
+}
+
+.hidden {
+    display: none;
+}
+
+.boton-musica{
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.boton-musica:hover {
+    transform: scale(1.05);
+    background-color: #e74c3c;
+}
+
+.hearts-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -5;
+  background-image: url('https://media.tenor.com/tKCqj_okD1UAAAAj/transparent-hearts.gif'); /* Fondo animado */
+  background-size: cover;
+  opacity: 0.1;
+}
+
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
