@@ -12,12 +12,18 @@
     <header>
         <h1>Amor Mio... 💌</h1>
         <button class="boton-musica" onclick="document.getElementById('musica').play()">Pulsa aca para la musiquita</button>
-
     </header>
 
-    
-
     <main>
+
+        <div id="pantalla-espera">
+            <div class="filtro"></div>
+            <div class="cuenta-regresiva-card">
+                <h2>🎉 Falta para tu cumpleaños 🎉</h2>
+                <p id="tiempo-restante"></p>
+            </div>
+        </div>
+
         <section class="entry right">
             <img src="Foto1.jpg" alt="Foto 1" />
             <p>Cada momento contigo es mágico, 2 años contigo han sido emocionantes y llenos de amor.</p>
@@ -128,6 +134,36 @@
     </audio>
     <div class="hearts-background"></div>
 
+
+    <script>
+        const contenedor = document.getElementById("pantalla-espera");
+        const tiempoRestante = document.getElementById("tiempo-restante");
+
+        const cumpleanos = new Date("2025-05-14T00:00:00");
+
+        function actualizarCuenta() {
+            const ahora = new Date();
+            const diferencia = cumpleanos - ahora;
+
+            if (diferencia <= 0) {
+                contenedor.style.display = "none";
+                document.body.classList.remove("no-scroll"); // ← permite scroll cuando ya es el día
+                return;
+            }
+
+            document.body.classList.add("no-scroll"); // ← evita scroll mientras espera
+
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
+            const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
+            const segundos = Math.floor((diferencia / 1000) % 60);
+
+            tiempoRestante.textContent = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+            setTimeout(actualizarCuenta, 1000);
+        }
+
+        actualizarCuenta();
+    </script>
 
 
 </body>
